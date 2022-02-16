@@ -1,14 +1,13 @@
 version: '2.1'
-
 orbs:
-  grype: anchore/grype@0.1.0
-
-
-workflows:
-  integration-test_deploy:
-    jobs:
+  grype: 'anchore/grype@dev:alpha'
+jobs:
+  list-container-vulnerabilities:
+    executor: grype/default
+    steps:
       - grype/list-image-vulns:
-          image-name: kr1ps/mairejava # grype will pull this image from docker.io, by default, check the scan-image command for more options 
-      - grype/list-dir-vulns:
-          path-to-scan: ./
-
+          image-name: 'alpine:latest'
+workflows:
+  scan-my-image:
+    jobs:
+      - list-container-vulnerabilities
