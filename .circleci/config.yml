@@ -4,6 +4,6 @@ orbs:
 workflows:
   scan_image:
     jobs:
-      - anchore-engine/image_scan:
+      - grype/image_scan:
           image_name: 'kr1ps/mairejava:latest'
           
