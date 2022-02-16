@@ -5,5 +5,5 @@ workflows:
   scan_image:
     jobs:
       - anchore/image_scan:
-          image_name: kr1ps/mairejava
-          timeout: '350'
+          image_name: kr1ps/mairejava:latest
+          timeout: '300'
