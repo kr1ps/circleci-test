@@ -5,5 +5,5 @@ workflows:
   scan_image:
     jobs:
       - anchore-engine/image_scan:
-          image_name: 'docker.io/kr1ps/mairejava:latest'
+          image_name: 'kr1ps/mairejava:latest'
           
