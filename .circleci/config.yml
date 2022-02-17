@@ -7,4 +7,4 @@ workflows:
       - anchore/image_scan:
           image_name: 'kr1ps/mairejava:latest'
           policy_failure: true
-          timeout: '300'
+          timeout: '350'
