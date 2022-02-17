@@ -1,0 +1,31 @@
+{
+  "id": "general01",
+  "version": "1_0",
+  "name": "My kr1ps Default bundle",
+  "comment": "My system's default bundle",
+  "whitelisted_images": [],
+  "blacklisted_images": [],
+  "mappings": [],
+  "whitelists": [],
+  "policies": [
+    {
+      "name": "Kr1psDefaultPolicy",
+      "version": "1_0",
+      "comment": "Policy for basic checks",
+      "id": "policy1",
+      "rules": [
+        {
+          "action": "STOP",
+          "gate": "vulnerabilities",
+          "trigger": "package",
+          "id": "rule1",
+          "params": [
+            { "name": "package_type", "value": "all" },
+            { "name": "severity_comparison", "value": ">=" },
+            { "name": "severity", "value": "medium" }
+          ]
+        }
+      ]
+    }
+  ]
+}

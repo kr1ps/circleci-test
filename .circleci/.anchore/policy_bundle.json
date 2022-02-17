@@ -1,15 +1,24 @@
 {
-  "id": "general01",
+  "id": "default0",
   "version": "1_0",
-  "name": "My kr1ps Default bundle",
+  "name": "My Default bundle",
   "comment": "My system's default bundle",
   "whitelisted_images": [],
   "blacklisted_images": [],
-  "mappings": [],
+  "mappings": [
+    {
+      "name": "default", 
+      "registry": "*",
+      "repository": "*",
+      "image": { "type": "tag", "value": "*" },
+      "policy_ids": [ "policy1" ],
+      "whitelist_ids": [ "whitelist1" ]
+    }
+  ],
   "whitelists": [],
   "policies": [
     {
-      "name": "Kr1psDefaultPolicy",
+      "name": "Default-Krips-Policy",
       "version": "1_0",
       "comment": "Policy for basic checks",
       "id": "policy1",
@@ -23,6 +32,25 @@
             { "name": "package_type", "value": "all" },
             { "name": "severity_comparison", "value": ">=" },
             { "name": "severity", "value": "medium" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DBPolicy",
+      "version": "1_0",
+      "comment": "Policy for basic checks on a db",
+      "id": "policy2",
+      "rules": [
+        {
+          "action": "STOP",
+          "gate": "vulnerabilities",
+          "trigger": "package",
+          "id": "rule1",
+          "params": [
+            { "name": "package_type", "value": "all" },
+            { "name": "severity_comparison", "value": ">=" },
+            { "name": "severity", "value": "low" }
           ]
         }
       ]
