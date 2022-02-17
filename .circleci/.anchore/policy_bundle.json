@@ -24,7 +24,7 @@
       "id": "policy1",
       "rules": [
         {
-          "action": "STOP",
+          "action": "GO",
           "gate": "vulnerabilities",
           "trigger": "package",
           "id": "rule1",
