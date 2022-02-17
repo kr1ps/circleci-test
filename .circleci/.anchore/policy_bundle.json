@@ -1,11 +1,19 @@
 {
-  "id": "default0",
+  "id": "general01",
   "version": "1_0",
   "name": "My Default bundle",
   "comment": "My system's default bundle",
   "whitelisted_images": [],
   "blacklisted_images": [],
   "mappings": [
+    { 
+      "name": "DockerHub",
+      "registry": "docker.io",
+      "repository": "library/postgres",
+      "image": { "type": "tag", "value": "latest" },
+      "policy_ids": [ "policy1", "policy2" ],
+      "whitelist_ids": [ "whitelist1", "whitelist2" ]
+    },
     {
       "name": "default", 
       "registry": "*",
@@ -18,7 +26,7 @@
   "whitelists": [],
   "policies": [
     {
-      "name": "Default-Krips-Policy",
+      "name": "DefaultPolicy",
       "version": "1_0",
       "comment": "Policy for basic checks",
       "id": "policy1",
@@ -32,25 +40,6 @@
             { "name": "package_type", "value": "all" },
             { "name": "severity_comparison", "value": ">=" },
             { "name": "severity", "value": "medium" }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "DBPolicy",
-      "version": "1_0",
-      "comment": "Policy for basic checks on a db",
-      "id": "policy2",
-      "rules": [
-        {
-          "action": "STOP",
-          "gate": "vulnerabilities",
-          "trigger": "package",
-          "id": "rule1",
-          "params": [
-            { "name": "package_type", "value": "all" },
-            { "name": "severity_comparison", "value": ">=" },
-            { "name": "severity", "value": "low" }
           ]
         }
       ]
