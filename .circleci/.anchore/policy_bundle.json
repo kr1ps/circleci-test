@@ -1,5 +1,5 @@
 {
-    "name": "DefaultPolicy", 
+    "name": "kr1ps-Default-Policy", 
     "version": "1_0",
     "comment": "Policy for basic checks", 
     "id": "ba6daa06-da3b-46d3-9e22-f01f07b0489a", 
