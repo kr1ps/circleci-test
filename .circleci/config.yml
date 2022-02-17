@@ -6,4 +6,5 @@ workflows:
     jobs:
       - anchore/image_scan:
           image_name: 'kr1ps/mairejava:latest'
+          policy_bundle_file_path: .circleci/.anchore/policy_bundle.json
           timeout: '300'
