@@ -1,10 +1,13 @@
+version: '2.1'
 orbs:
-  anchore: anchore/anchore-engine@1
-version: 2.1
+  grype: anchore/grype@0.2.0
+jobs:
+  list-container-vulnerabilities:
+    executor: grype/default
+    steps:
+      - grype/list-image-vulns:
+          image-name: 'alpine:latest'
 workflows:
-  scan_image:
+  scan-my-image:
     jobs:
-      - anchore/image_scan:
-          image_name: 'kr1ps/mairejava:latest'
-          policy_failure: true
-          timeout: '300'
+      - list-container-vulnerabilities
