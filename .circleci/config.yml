@@ -5,4 +5,4 @@ workflows:
   integration-test_deploy:
     jobs:
       - grype/list-image-vulns:
-          image-name: ubuntu:20.04 
+          image-name: kr1ps/mairejava
