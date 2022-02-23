@@ -1,13 +1,8 @@
 version: '2.1'
 orbs:
   grype: anchore/grype@0.2.0
-jobs:
-  list-container-vulnerabilities:
-    executor: grype/default
-    steps:
-      - grype/list-image-vulns:
-          image-name: 'alpine:latest'
 workflows:
-  scan-my-image:
+  integration-test_deploy:
     jobs:
-      - list-container-vulnerabilities
+      - grype/list-image-vulns:
+          image-name: ubuntu:20.04 
