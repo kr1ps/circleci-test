@@ -9,4 +9,4 @@ workflows:
           
       - grype/list-image-vulns:
           image-name: kr1ps/mairejava
-          fail-on-severity: high #options=[negligible low medium high critical]
+          fail-on-severity: high #options=[negligible low medium high crditical]
