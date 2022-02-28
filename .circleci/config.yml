@@ -1,6 +1,6 @@
 version: '2.1'
 orbs:
-  grype: anchore/grype@0.2.0
+  grype: kr1ps/grype@0.0.1
 workflows:
   integration-test_deploy:
     jobs:
